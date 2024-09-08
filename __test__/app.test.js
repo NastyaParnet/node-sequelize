@@ -27,7 +27,7 @@ describe("Products Router results", () => {
     products[1].id = 2;
   });
 
-  it.skip("should return all products", async () => {
+  it("should return all products", async () => {
     const response = await request(app).get(baseURL);
     expect(response.status).toBe(200);
     expect(response.body).toEqual(products);

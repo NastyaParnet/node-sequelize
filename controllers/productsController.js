@@ -8,8 +8,13 @@ exports.checkProduct = async () => {
   // if fails - 400 status code with validation error message in response body 
 };
 
-exports.getAllProducts = async () => {
-  // 200 status code with array of products in response body 
+exports.getAllProducts = async (req, res) => {
+  const products = await Product.findAll({
+    attributes: { 
+      exclude: ['createdAt', 'updatedAt'] 
+    }
+  });
+  res.status(200).json(products);
 };
 
 exports.getProductById = async () => {
