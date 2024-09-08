@@ -54,7 +54,7 @@ describe("Products Router results", () => {
     expect(response.body).toEqual(products[1]);
   });
 
-  it.skip("should update a product by ID if id and product info are correct", async () => {
+  it("should update a product by ID if id and product info are correct", async () => {
     const renewedProduct = {
       title: "Product C",
       price: 34.44,

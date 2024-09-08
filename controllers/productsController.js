@@ -48,8 +48,15 @@ exports.createProduct = async (req, res) => {
   }
 };
 
-exports.updateProduct = async () => {
-  // 200 status code with updated product (without id) in response body 
+exports.updateProduct = async (req, res) => {
+  await Product.update(req.body, {
+    where: {
+      id: res.locals.product.id
+    }
+  })
+  const updatedProduct = await Product.findByPk(res.locals.product.id);
+  const result =  _.pick(updatedProduct, ["title", "price", "description"]);
+  res.status(200).json(result);
 };
 
 exports.deleteProduct = async () => {
