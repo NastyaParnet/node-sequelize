@@ -33,7 +33,7 @@ describe("Products Router results", () => {
     expect(response.body).toEqual(products);
   });
 
-  it.skip("should create a new product if the product is valid and return it with status code 201", async () => {
+  it("should create a new product if the product is valid and return it with status code 201", async () => {
     const newProduct = {
       title: "Product C",
       price: 34.44,

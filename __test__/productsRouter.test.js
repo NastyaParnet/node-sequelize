@@ -10,7 +10,7 @@ describe("Products Router called methods", () => {
     jest.clearAllMocks();
   });
 
-  it.skip("POST product calls checkProduct and then createProduct", async () => {
+  it("POST product calls checkProduct and then createProduct", async () => {
     const checkProductSpy = jest
       .spyOn(productsController, "checkProduct")
       .mockImplementationOnce((_, __, next) => next());
