@@ -1,8 +1,17 @@
 const _ = require('lodash');
 const Product = require("../models/productModel");
 
-exports.checkProductId = async () => {
-  // if fails - 404 status code with response body { status: "fail", message: "Invalid products id" }
+exports.checkProductId = async (req, res, next) => {
+  const product = await Product.findByPk(req.params.id)
+  if(product === null) {
+    res.status(404).json({
+      status: 'fail',
+      message: 'Invalid products id',
+    });
+    return;
+  }
+  res.locals.product = product;
+  next();
 };
 
 exports.checkProduct = async (req, res, next) => {
@@ -21,8 +30,8 @@ exports.getAllProducts = async (req, res) => {
   res.status(200).json(products);
 };
 
-exports.getProductById = async () => {
-  // 200 status code with product in response body
+exports.getProductById = async (req, res) => {
+  res.status(200).json(res.locals.product);
 };
 
 exports.createProduct = async (req, res) => {

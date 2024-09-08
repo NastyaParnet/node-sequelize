@@ -58,7 +58,7 @@ describe("Products Router called methods", () => {
     expect(deleteProductSpy).toHaveBeenCalledTimes(1);
   });
 
-  it.skip("GET product calls checkProductId and then getProductById", async () => {
+  it("GET product calls checkProductId and then getProductById", async () => {
     const checkIdSpy = jest
       .spyOn(productsController, "checkProductId")
       .mockImplementationOnce((_, __, next) => next());
