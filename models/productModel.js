@@ -26,7 +26,11 @@ const Product = db.define('product',{
     type: DataTypes.DATE
   }
 },{
-  freezeTableName: true
+  freezeTableName: true,
+  timestamps: true,
+  defaultScope: {
+    attributes: { exclude: ['createdAt', 'updatedAt'] }
+  }
 });
  
 module.exports = Product;

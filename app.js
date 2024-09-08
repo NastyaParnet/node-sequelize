@@ -5,6 +5,10 @@ const cors = require("cors");
  
 const app = express();
 
+app.use(cors());
+app.use(express.json());
+app.use('/api/v1/products', productRoutes);
+
 const func = async () => {
   try {
     await db.authenticate();
@@ -12,10 +16,6 @@ const func = async () => {
   } catch (error) {
     console.error('Connection error:', error);
   }
-   
-  app.use(cors());
-  app.use(express.json());
-  app.use('/api/v1/products', productRoutes);
 }
 
 func();

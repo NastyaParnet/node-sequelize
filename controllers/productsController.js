@@ -9,11 +9,7 @@ exports.checkProduct = async () => {
 };
 
 exports.getAllProducts = async (req, res) => {
-  const products = await Product.findAll({
-    attributes: { 
-      exclude: ['createdAt', 'updatedAt'] 
-    }
-  });
+  const products = await Product.findAll();
   res.status(200).json(products);
 };
 
