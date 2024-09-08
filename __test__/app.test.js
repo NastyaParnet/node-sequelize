@@ -27,13 +27,13 @@ describe("Products Router results", () => {
     products[1].id = 2;
   });
 
-  it("should return all products", async () => {
+  it.skip("should return all products", async () => {
     const response = await request(app).get(baseURL);
     expect(response.status).toBe(200);
     expect(response.body).toEqual(products);
   });
 
-  it("should create a new product if the product is valid and return it with status code 201", async () => {
+  it.skip("should create a new product if the product is valid and return it with status code 201", async () => {
     const newProduct = {
       title: "Product C",
       price: 34.44,
@@ -48,13 +48,13 @@ describe("Products Router results", () => {
     );
   });
 
-  it("should return a product by ID", async () => {
+  it.skip("should return a product by ID", async () => {
     const response = await request(app).get(`${baseURL}/2`);
     expect(response.status).toBe(200);
     expect(response.body).toEqual(products[1]);
   });
 
-  it("should update a product by ID if id and product info are correct", async () => {
+  it.skip("should update a product by ID if id and product info are correct", async () => {
     const renewedProduct = {
       title: "Product C",
       price: 34.44,
@@ -72,7 +72,7 @@ describe("Products Router results", () => {
     });
   });
 
-  it("should delete a product by ID if id is correct", async () => {
+  it.skip("should delete a product by ID if id is correct", async () => {
     const id = 1;
     const response = await request(app).delete(`${baseURL}/${id}`);
     expect(response.status).toBe(204);

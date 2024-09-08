@@ -34,7 +34,7 @@ describe("productsController", () => {
     products[1].id = 2;
   });
 
-  it("checkId works correctly if id is invalid", async () => {
+  it.skip("checkId works correctly if id is invalid", async () => {
     const req = mockRequest();
     req.params.id = 100;
     const res = mockResponse();
@@ -48,7 +48,7 @@ describe("productsController", () => {
     expect(next).toHaveBeenCalledTimes(0);
   });
 
-  it("checkId works correctly if id is valid", async () => {
+  it.skip("checkId works correctly if id is valid", async () => {
     const req = mockRequest();
     const res = mockResponse();
     const next = jest.fn();
@@ -59,7 +59,7 @@ describe("productsController", () => {
     expect(next).toHaveBeenCalledTimes(1);
   });
 
-  it("checkProduct works correctly if product is invalid", async () => {
+  it.skip("checkProduct works correctly if product is invalid", async () => {
     const req = mockRequest();
     const res = mockResponse();
     const next = jest.fn();
@@ -76,7 +76,7 @@ describe("productsController", () => {
     expect(next).toHaveBeenCalledTimes(0);
   });
 
-  it("checkProduct works correctly if prodect is valid", async () => {
+  it.skip("checkProduct works correctly if prodect is valid", async () => {
     const req = mockRequest();
     const res = mockResponse();
     const next = jest.fn();

@@ -15,7 +15,7 @@ const func = async () => {
    
   app.use(cors());
   app.use(express.json());
-  app.use('/products', productRoutes);
+  app.use('/api/v1/products', productRoutes);
 }
 
 func();

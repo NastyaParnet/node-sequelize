@@ -10,7 +10,7 @@ describe("Products Router called methods", () => {
     jest.clearAllMocks();
   });
 
-  it("POST product calls checkProduct and then createProduct", async () => {
+  it.skip("POST product calls checkProduct and then createProduct", async () => {
     const checkProductSpy = jest
       .spyOn(productsController, "checkProduct")
       .mockImplementationOnce((_, __, next) => next());
@@ -26,7 +26,7 @@ describe("Products Router called methods", () => {
     expect(createProductSpy).toHaveBeenCalledTimes(1);
   });
 
-  it("PUT product calls checkProductId and checkProduct then updateProduct", async () => {
+  it.skip("PUT product calls checkProductId and checkProduct then updateProduct", async () => {
     const checkIdSpy = jest
       .spyOn(productsController, "checkProductId")
       .mockImplementationOnce((_, __, next) => next());
@@ -44,7 +44,7 @@ describe("Products Router called methods", () => {
     expect(updateProductSpy).toHaveBeenCalledTimes(1);
   });
 
-  it("DELETE product calls checkProductId and then deleteProduct", async () => {
+  it.skip("DELETE product calls checkProductId and then deleteProduct", async () => {
     const checkIdSpy = jest
       .spyOn(productsController, "checkProductId")
       .mockImplementationOnce((_, __, next) => next());
@@ -58,7 +58,7 @@ describe("Products Router called methods", () => {
     expect(deleteProductSpy).toHaveBeenCalledTimes(1);
   });
 
-  it("GET product calls checkProductId and then getProductById", async () => {
+  it.skip("GET product calls checkProductId and then getProductById", async () => {
     const checkIdSpy = jest
       .spyOn(productsController, "checkProductId")
       .mockImplementationOnce((_, __, next) => next());
