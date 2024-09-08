@@ -72,7 +72,7 @@ describe("Products Router results", () => {
     });
   });
 
-  it.skip("should delete a product by ID if id is correct", async () => {
+  it("should delete a product by ID if id is correct", async () => {
     const id = 1;
     const response = await request(app).delete(`${baseURL}/${id}`);
     expect(response.status).toBe(204);

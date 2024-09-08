@@ -59,6 +59,11 @@ exports.updateProduct = async (req, res) => {
   res.status(200).json(result);
 };
 
-exports.deleteProduct = async () => {
-  // 204 status code
+exports.deleteProduct = async (req, res) => {
+  await Product.destroy({
+    where: {
+      id: res.locals.product.id
+    }
+  });
+  res.status(204).json(null);
 };
